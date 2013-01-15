@@ -2,6 +2,9 @@
 
 
 require_once 'includes/usermanagement.inc.php';
+require 'includes/debug.inc.php';
+
+$debug=TRUE;
 
 $newusername="";
 $newpassword="";
@@ -16,9 +19,10 @@ $email=htmlentities($_POST["email"]);
 $usercreateerror=NULL;
 $erors = FALSE;
 
-
+debug("Entering Control structure", $debug);
 
 if (isset($action) && $action=="createuser") {
+	debug("We think we have a subbmitted form", $debug);
 	if (!isset($username) || $username=='') {
 		$usercreateerror[]="Please enter a username";
 		$errors = TRUE;
@@ -37,6 +41,7 @@ if (isset($action) && $action=="createuser") {
 		$errors = TRUE;
 	}
 	if ($errors==FALSE) {
+		debug("We are adding the user", $debug);
 		addUser($username, $password, $email);
 	} 
 }
