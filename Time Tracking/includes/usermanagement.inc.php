@@ -1,37 +1,24 @@
 <?php
 
 function userExists($username) {
-	echo "A";
 	require 'includes/dbconnect.inc.php';
-	echo "B";
 
-	echo "C";
 	$sql='SELECT COUNT(*) FROM users WHERE username = (?)';
-	echo "D";
 
-	echo "E";
 	if (!$stmt = $dbh->prepare($sql)) {
-		echo "E1";
 		echo "Prepare failed: (" . $dbh->errno . ") " . $dbh->error;
-		echo "E2";
 	}
 
-	echo "F";
 	if (!$stmt->bind_param("s", $username)) {
 		echo "Binding of paramaters failed: ($stmt->errno) $stmt->error";
 	}
-	echo "G";
 	if (!$stmt->execute()) {
 		echo "Execute failed: ($stmt->errno) $stmt->error";
 	}
-	echo "H";
 	$row = $stmt->fetch();
-	echo "I";
 	if ($row[0] > 0) {
-		echo "J";
 		return TRUE;
 	} else {
-		echo "K";
 		return FALSE;
 	}
 
