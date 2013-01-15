@@ -150,7 +150,7 @@ function loginSuccessful($username, $password) {
 		echo "Execute failed: ($stmt->errno) $stmt->error";
 	}
 	
-	$row = $stmt-fetch();
+	$row = $stmt->fetch();
 	
 	if ($row[0] > 0) {
 		
