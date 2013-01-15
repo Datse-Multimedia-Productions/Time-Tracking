@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php if (isset($usercreateerror)): ?>
+<?php if (isset($loginerror)): ?>
 	<p>An error has occurred:</p>
 	<ul>
 	<?php
@@ -24,16 +24,10 @@
 		<label for="username">Username: </label><input type="text"
 			name="username" id="username">
 			<?php echo $newusername ?>
-		</input><br /> 
-		<label for="email">Email: </label><input
-			type="text" name="email" id="email">
-			<?php echo $newemail ?>
-		</input><br /> 
-		<label for="password">Password: </label><input
-			type="password" name="password" id="password">
+		</input><br /> <label for="password">Password: </label><input
+			type="text" name="password" id="password">
 			<?php echo $newpassword ?>
-		</input><br /> 
-		<input type="hidden" name="action" value="createrole" />
+		</input><br /> <input type="hidden" name="action" value="login" />
 		<input type="submit" value="Create Role" />
 	</form>
 </body>

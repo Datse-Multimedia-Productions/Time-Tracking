@@ -9,11 +9,11 @@
 </head>
 <body>
 
-<?php if (isset($usercreateerror)): ?>
+<?php if (isset($createroleerror)): ?>
 	<p>An error has occurred:</p>
 	<ul>
 	<?php
-	foreach ($usercreateerror as $error) {
+	foreach ($createroleerror as $error) {
 		echo '<li class="error">' . $error . "</li>i\n";
 	}
 	?>
