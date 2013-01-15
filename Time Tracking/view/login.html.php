@@ -26,10 +26,10 @@
 			name="username" id="username">
 			<?php echo $newusername ?>
 		</input><br /> <label for="password">Password: </label><input
-			type="text" name="password" id="password">
+			type="password" name="password" id="password">
 			<?php echo $newpassword ?>
 		</input><br /> <input type="hidden" name="action" value="login" />
-		<input type="submit" value="Create Role" />
+		<input type="submit" value="Login" />
 	</form>
 	<?php else: ?>
 	<p>You are logged in</p>
