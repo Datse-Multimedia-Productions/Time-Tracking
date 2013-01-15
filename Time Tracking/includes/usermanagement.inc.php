@@ -31,7 +31,9 @@ function addUser($username, $password, $email) {
 	
 	$debug=TRUE;
 	
+	echo "calling debug code";
 	debug("debug code loaded, and tested", $debug);
+	echo "debug code called";
 
 	$sql='INSERT INTO users SET username = (?), password = (?), email = (?), created = NOW()';
 
