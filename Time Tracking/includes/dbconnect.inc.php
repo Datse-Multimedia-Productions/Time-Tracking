@@ -19,9 +19,6 @@ if ($dbh->connect_errno) {
 	echo "failed to connect $dbh->connect_errno: $dbh->connect_error";
 }
 
-echo $dbh->host_info;
-
-
 
 ?>
 
