@@ -9,7 +9,7 @@ $newemail = "";
 
 $action=htmlentities($_POST["action"]);
 $username=htmlentities($_POST["username"]);
-$password=md5($_POST["password"]);echo $_POST["password"];
+$password=md5($_POST["password"]);
 $email=htmlentities($_POST["email"]);
 
 
