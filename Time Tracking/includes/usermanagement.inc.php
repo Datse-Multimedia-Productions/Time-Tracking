@@ -144,7 +144,7 @@ function loginSuccessful($username, $password) {
 		echo "Prepare failed ($dbh->errno) $dbh->error";
 	}
 	
-	if (!stmt->bind_param("ss", $username, $password)) {
+	if (!$stmt->bind_param("ss", $username, $password)) {
 		echo "Binding paramaters failed ($stmt->errno) $stmt->error";
 	}
 	
