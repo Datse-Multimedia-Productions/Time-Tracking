@@ -167,10 +167,13 @@ function loginSuccessful($username, $password) {
 		echo "Execute failed: ($stmt->errno) $stmt->error";
 	}
 	
-	$stmt->bind_result($count);
+	if (!$stmt->bind_result($count)) {
+		echo "Binding results failed ($stmt->errno) $stmt->error";
+	}
 	
 	$stmt->fetch();
 	
+	debug("$count", $debug);
 	
 	if ($count > 0) {
 		
