@@ -9,15 +9,9 @@ $newemail = "";
 
 $action=htmlentities($_POST["action"]);
 $username=htmlentities($_POST["username"]);
-echo $username;
-echo $_POST["username"];
-$password=md5($_POST["password"]);
-echo $_POST["password"];
+$password=md5($_POST["password"]);echo $_POST["password"];
 $email=htmlentities($_POST["email"]);
-echo $email;
-echo $_POST["email"];
 
-echo
 
 $usercreateerror=NULL;
 $erors = FALSE;
