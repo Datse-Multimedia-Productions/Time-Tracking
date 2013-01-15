@@ -145,6 +145,11 @@ function addRole($rolename, $roledescription) {
 
 function loginSuccessful($username, $password) {
 	require 'includes/dbconnect.inc.php';
+	require_once 'includes/debug.inc.php';
+	
+	$debug=TRUE;
+	
+	debug("In loginSuccesful", $debug);
 	
 	$sql = 'SELECT COUNT(*) FROM users WHERE username=(?) AND password=(?)';
 	
@@ -164,16 +169,20 @@ function loginSuccessful($username, $password) {
 	
 	if ($row[0] > 0) {
 		
+		debug("Login Successful", $debug);
+		
 		session_start();
 		
 		$_SESSION["logedin"]='1';
 		$_SESSION["username"]=$username;
 		$_SESSION["password"]=$password;
 		
-		echo "Login successful";
 	
 		return TRUE;
 	} else {
+		
+		debug("Login failed", $debug);
+		
 		return FALSE;
 	}
 }
