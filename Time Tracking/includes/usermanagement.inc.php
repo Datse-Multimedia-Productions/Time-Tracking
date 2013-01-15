@@ -27,7 +27,7 @@ function userExists($username) {
 
 function addUser($username, $password, $email) {
 	require 'includes/dbconnect.inc.php';
-	require 'includes/debug.inc.php'
+	require 'includes/debug.inc.php';
 	
 	$debug=TRUE;
 
