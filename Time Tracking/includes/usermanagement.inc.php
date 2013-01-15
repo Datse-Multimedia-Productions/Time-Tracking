@@ -28,8 +28,6 @@ function userExists($username) {
 function addUser($username, $password, $email) {
 	require 'includes/dbconnect.inc.php';
 
-	echo "username $username password $password email $email";
-
 	$sql='INSERT INTO users SET username = (?), password = (?), email = (?), created = NOW()';
 
 	if (!$stmt = $dbh->prepare($sql)) {
