@@ -27,6 +27,9 @@ function userExists($username) {
 
 function addUser($username, $password, $email) {
 	require 'includes/dbconnect.inc.php';
+	require 'includes/debug.inc.php'
+	
+	$debug=TRUE;
 
 	$sql='INSERT INTO users SET username = (?), password = (?), email = (?), created = NOW()';
 
@@ -45,8 +48,10 @@ function addUser($username, $password, $email) {
 	$row = $stmt->fetch();
 
 	if ($row[0] > 0) {
+		debug("looks like user was added");
 		return TRUE;
 	} else {
+		debug("looks like user was not added, but why, we should have had an error");
 		return FALSE;
 	}
 
