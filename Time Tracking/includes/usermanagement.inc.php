@@ -48,10 +48,10 @@ function addUser($username, $password, $email) {
 	$row = $stmt->fetch();
 
 	if ($row[0] > 0) {
-		debug("looks like user was added");
+		debug("looks like user was added", $debug);
 		return TRUE;
 	} else {
-		debug("looks like user was not added, but why, we should have had an error");
+		debug("looks like user was not added, but why, we should have had an error", $debug);
 		return FALSE;
 	}
 

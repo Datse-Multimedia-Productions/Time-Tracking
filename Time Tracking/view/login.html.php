@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Create a Role</title>
+<title>Login</title>
 </head>
 <body>
 
@@ -20,6 +20,7 @@
 	</ul>
 	<?php endif; ?>
 
+<?php if ($_SESSION["loggedin"]!=1): ?>
 	<form action="" method="post">
 		<label for="username">Username: </label><input type="text"
 			name="username" id="username">
@@ -30,5 +31,8 @@
 		</input><br /> <input type="hidden" name="action" value="login" />
 		<input type="submit" value="Create Role" />
 	</form>
+	<?php else: ?>
+	<p>You are logged in</p>
+	<?php endif; ?>
 </body>
 </html>

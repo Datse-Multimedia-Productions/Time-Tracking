@@ -43,7 +43,6 @@ if (isset($action) && $action=="createuser") {
 		$errors = TRUE;
 	}
 	if ($errors==FALSE) {
-		echo "username $username password $password email $email";
 		addUser($username, $password, $email);
 	} 
 }
