@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Create a Role</title>
+<title>Create a User</title>
 </head>
 <body>
 
@@ -33,8 +33,8 @@
 			type="password" name="password" id="password">
 			<?php echo $newpassword ?>
 		</input><br /> 
-		<input type="hidden" name="action" value="createrole" />
-		<input type="submit" value="Create Role" />
+		<input type="hidden" name="action" value="creatuser" />
+		<input type="submit" value="Create User" />
 	</form>
 </body>
 </html>
