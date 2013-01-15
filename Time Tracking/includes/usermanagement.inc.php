@@ -30,6 +30,8 @@ function addUser($username, $password, $email) {
 	require 'includes/debug.inc.php';
 	
 	$debug=TRUE;
+	
+	debug("debug code loaded, and tested", $debug);
 
 	$sql='INSERT INTO users SET username = (?), password = (?), email = (?), created = NOW()';
 
