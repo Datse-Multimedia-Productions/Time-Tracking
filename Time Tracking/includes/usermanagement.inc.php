@@ -167,6 +167,8 @@ function loginSuccessful($username, $password) {
 	
 	$row = $stmt->fetch();
 	
+	print_r($row);
+	
 	if ($row[0] > 0) {
 		
 		debug("Login Successful", $debug);
