@@ -33,7 +33,7 @@
 			type="password" name="password" id="password">
 			<?php echo $newpassword ?>
 		</input><br /> 
-		<input type="hidden" name="action" value="creatuser" />
+		<input type="hidden" name="action" value="createuser" />
 		<input type="submit" value="Create User" />
 	</form>
 </body>
