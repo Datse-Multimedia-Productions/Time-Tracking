@@ -147,6 +147,8 @@ function loginSuccessful($username, $password) {
 	require 'includes/dbconnect.inc.php';
 	require_once 'includes/debug.inc.php';
 	
+	$count=NULL;
+	
 	$debug=TRUE;
 	
 	debug("In loginSuccesful", $debug);
@@ -165,11 +167,12 @@ function loginSuccessful($username, $password) {
 		echo "Execute failed: ($stmt->errno) $stmt->error";
 	}
 	
-	$row = $stmt->fetch();
+	$stmt->bind_result($count);
 	
-	print_r($row);
+	$stmt->fetch();
 	
-	if ($row[0] > 0) {
+	
+	if ($count > 0) {
 		
 		debug("Login Successful", $debug);
 		
