@@ -56,6 +56,7 @@ function addUser($username, $password, $email) {
 		return TRUE;
 	} else {
 		debug("looks like user was not added, but why, we should have had an error", $debug);
+		debug("we have an incorrect test for adding the user, we may or may not have added a user, need to find a better test to see if user was added.", $debug);
 		return FALSE;
 	}
 
