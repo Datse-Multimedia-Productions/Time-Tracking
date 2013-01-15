@@ -134,4 +134,40 @@ function addRole($rolename, $roledescription) {
 		return FALSE;
 	}
 }
+
+function loginSuccessful($username, $password) {
+	require 'includes/dbconnect.inc.php';
+	
+	$sql = 'SELECT COUNT(*) FROM users WHERE username=(?) AND password=(?)';
+	
+	if (!$stmt = $dbh->prepare($sql)) {
+		echo "Prepare failed ($dbh->errno) $dbh->error";
+	}
+	
+	if (!stmt->bind_param("ss", $username, $password)) {
+		echo "Binding paramaters failed ($stmt->errno) $stmt->error";
+	}
+	
+	if (!$stmt->execute()) {
+		echo "Execute failed: ($stmt->errno) $stmt->error";
+	}
+	
+	$row = $stmt-fetch();
+	
+	if ($row[0] > 0) {
+		
+		session_start();
+		
+		$_SESSION["logedin"]='1';
+		$_SESSION["username"]=$username;
+		$_SESSION["password"]=$password;
+		
+		echo "Login successful";
+	
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+}
+
 ?>
