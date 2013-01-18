@@ -14,7 +14,7 @@
 	<ul>
 	<?php
 	foreach ($usercreateerror as $error) {
-		echo '<li class="error">' . $error . "</li>i\n";
+		echo '<li class="error">' . $error . "</li>\n";
 	}
 	?>
 	</ul>
