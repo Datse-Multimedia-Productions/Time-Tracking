@@ -14,13 +14,13 @@
 	<ul>
 	<?php
 	foreach ($loginerrors as $error) {
-		echo '<li class="error">' . $error . "</li>i\n";
+		echo '<li class="error">' . $error . "</li>\n";
 	}
 	?>
 	</ul>
 	<?php endif; ?>
 
-<?php if ($_SESSION["loggedin"]!=1): ?>
+<?php if (!$_SESSION["loggedin"]==1): ?>
 	<form action="" method="post">
 		<label for="username">Username: </label><input type="text"
 			name="username" id="username">
@@ -31,6 +31,10 @@
 		</input><br /> <input type="hidden" name="action" value="login" />
 		<input type="submit" value="Login" />
 	</form>
+	<?php 
+		echo '$_SESSION=';
+		print_r($_SESSION); 
+	?>
 	<?php else: ?>
 	<p>You are logged in</p>
 	<?php endif; ?>

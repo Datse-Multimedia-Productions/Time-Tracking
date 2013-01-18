@@ -181,7 +181,7 @@ function loginSuccessful($username, $password) {
 		
 		session_start();
 		
-		$_SESSION["logedin"]='1';
+		$_SESSION["loggedin"]=1;
 		$_SESSION["username"]=$username;
 		$_SESSION["password"]=$password;
 		
