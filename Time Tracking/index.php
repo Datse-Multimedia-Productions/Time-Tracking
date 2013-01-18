@@ -28,8 +28,16 @@
  
 require "controller/session.php"; 
 include "controller/createuser.php";
-include "controller/editroles.php";
-include "controller/login.php"; 
+//include "controller/editroles.php";
+//include "controller/login.php"; 
+
+require_once "includes/debug.inc.php";
+
+$debug=TRUE;
+
+debug("action=".$_POST["action"], $debug);
+
+
   
 switch ($_POST["action"]) {
 	case "createuser":
@@ -45,5 +53,4 @@ switch ($_POST["action"]) {
 		include "view/index.html.php";
 		break;
 }
-}
-print_r()
+
